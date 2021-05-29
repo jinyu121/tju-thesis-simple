@@ -1,0 +1,125 @@
+% 基本设置
+\ctexset{
+	chapter={
+		number=\arabic{chapter},
+		format=\centering\heiti\zihao{-3}\bfseries,
+		beforeskip={32pt},
+		afterskip={32pt},
+		fixskip=true
+	},
+	section={
+		format=\heiti\zihao{4}\bfseries,
+		beforeskip={20pt},
+		afterskip={20pt},
+		fixskip=true
+	},
+	subsection={
+		format=\heiti\zihao{4}\bfseries,
+		beforeskip={14pt},
+		afterskip={14pt},
+		fixskip=true
+	},
+	subsubsection={
+		format=\heiti\zihao{-4}\bfseries,
+		beforeskip={10pt},
+		afterskip={10pt},
+		fixskip=true
+	},
+	contentsname={目{\qquad}录}
+}
+
+% 定义
+\makeatletter
+\def\ctitle#1{\def\@ctitle{#1}}\def\@ctitle{}
+\def\etitle#1{\def\@etitle{#1}}\def\@etitle{}
+\def\caffil#1{\def\@caffil{#1}}\def\@caffil{}
+
+\def\csubjecttitle#1{\def\@csubjecttitle{#1}}\def\@csubjecttitle{}
+\def\csubject#1{\def\@csubject{#1}}\def\@csubject{}
+
+\def\cauthortitle#1{\def\@cauthortitle{#1}}\def\@cauthortitle{}
+\def\cauthor#1{\def\@cauthor{#1}}\def\@cauthor{}
+
+\def\csupervisortitle#1{\def\@csupervisortitle{#1}}\def\@csupervisortitle{}
+\def\csupervisor#1{\def\@csupervisor{#1}}\def\@csupervisor{}
+
+\def\ccorsupervisor#1{\def\@ccorsupervisor{#1}}\def\@ccorsupervisor{}
+\def\ccorsupervisortitle#1{\def\@ccorsupervisortitle{#1}}\def\@ccorsupervisortitle{}
+\def\cdate#1{\def\@cdate{#1}}\def\@cdate{}
+
+\def\ckeywords#1{ \leavevmode\newline\noindent{\heiti\zihao{4} 关键词：} #1}
+\def\ekeywords#1{ \leavevmode\newline\noindent{\heiti\zihao{4} KEY WORDS：} #1}
+
+
+% 页眉页脚
+\fancyhf{}%
+\fancyhead[CO]{\centering\zihao{5}\leftmark}%
+\fancyhead[CE]{\centering\zihao{5} 天津大学硕士学位论文}%
+\fancyfoot[LO,LE]{\centering\zihao{-5} ~\thepage~}%
+\renewcommand{\headrulewidth}{0.7pt}%
+\renewcommand{\footrulewidth}{0pt}%
+
+\fancypagestyle{plain}{% 开章页
+	\fancyhf{}%
+	\fancyhead[C]{\centering\zihao{5}\leftmark}%
+	\fancyfoot[C]{\centering\zihao{-5} ~\thepage~}%
+	\renewcommand{\headrulewidth}{0.7pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+}
+\fancypagestyle{front}{% 正文前部分
+	\fancyhf{}%
+	%\fancyhead[C]{\centering\zihao{5}\leftmark}%
+	\fancyfoot[C]{\centering\zihao{-5} ~\thepage~}%
+	\renewcommand{\headrulewidth}{0pt}%
+	\renewcommand{\footrulewidth}{0pt}%
+}
+
+
+% 脚注
+% 脚注字号改为10.5pt（五号字）
+\renewcommand{\footnotesize}{\fontsize{10.5pt}{13.65pt}\selectfont}
+% 脚注全文统一编号
+\counterwithout{footnote}{chapter} 
+
+% 编号
+\renewcommand{\thefigure}{\arabic{chapter}-\arabic{figure}} % 使图编号为 7-1 的格式 
+\renewcommand{\thetable}{\arabic{chapter}-\arabic{table}} %使表编号为 7-1 的格式
+\renewcommand{\theequation}{\arabic{chapter}-\arabic{equation}} %使公式编号为 7-1 的格式
+
+% 图表综合
+\captionsetup[figure]{position=bottom, aboveskip=0.25em, belowskip=-1.5em}
+\captionsetup[table]{position=top, aboveskip=0.25em, belowskip=0em}
+\setlength{\intextsep}{1.5em}
+\setlength{\textfloatsep}{1.5em}
+
+% 表格
+\renewcommand\arraystretch{1.3} % 单元格垂直间距
+\setlength{\tabcolsep}{0.25em} % 单元格水平间距
+
+% 目录
+\titlecontents{chapter}[4em]{\linespread{1.3}\zihao{-4}}{\contentslabel{4em}}{\hspace*{-4em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{section}[4em]{\linespread{1.3}\zihao{-4}}{\contentslabel{2em}}{\hspace*{-2em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+\titlecontents{subsection}[7em]{\linespread{1.3}\zihao{-4}}{\contentslabel{3em}}{\hspace*{-3em}}{~\titlerule*[0.6pc]{$.$}~\contentspage}
+
+% 参考文献
+\setlength{\bibsep}{1.5pt}% 段间距
+
+% 自定义环境
+\newcounter{pubctr} %自定义新计数器
+\newenvironment{publist}{%%%%%定义新环境
+	\begin{list}{[\arabic{pubctr}]} %%标签格式
+	{
+			\usecounter{pubctr}
+			\setlength{\leftmargin}{2.5em}     % 左边界 \leftmargin =\itemindent + \labelwidth + \labelsep
+			\setlength{\itemindent}{0em}     % 标号缩进量
+			\setlength{\labelsep}{1em}       % 标号和列表项之间的距离,默认0.5em
+			\setlength{\rightmargin}{0em}    % 右边界
+			\setlength{\topsep}{0ex}         % 列表到上下文的垂直距离
+			\setlength{\parsep}{0ex}         % 段落间距
+			\setlength{\itemsep}{0ex}        % 标签间距
+			\setlength{\listparindent}{0pt} % 段落缩进量
+	}
+}{\end{list}}
+
+% 参考文献
+\bibliographystyle{gbt7714-numerical}

@@ -1,0 +1,45 @@
+\documentclass[UTF8,zihao=-4,heading=true]{ctexbook}
+
+% 引用宏包
+\input{setup/package}
+% 定义格式
+\input{setup/format}
+
+% 开始正文
+\begin{document}
+
+\ctitle{论文标题}
+\etitle{论文英文标题}
+\caffil{某某学院}
+\csubjecttitle{专业学位类别}
+\csubject{蹦蹦学硕士}
+\cauthortitle{作\hspace{\fill}者\hspace{\fill}姓\hspace{\fill}名}
+\cauthor{小金鱼}
+\csupervisortitle{指\hspace{\fill}导\hspace{\fill}教\hspace{\fill}师}
+\csupervisor{大鲸鱼\quad 教授}
+\cdate{二〇二一年五月}
+
+\input{body/0-cover}
+
+% 正文
+\include{body/1-intro}
+\include{body/2-related-work}
+\include{body/3-propose}
+\include{body/4-fact}
+\include{body/5-conclusion}
+
+% 参考文献
+\addcontentsline{toc}{chapter}{参考文献}
+% \nocite{*} % 显示所有参考文献
+\bibliography{body/reference}
+
+% 附录和致谢
+\appendix
+% 附录
+\include{body/a-foobar}
+
+% 致谢
+\include{body/bak-1-publications}
+\include{body/bak-2-acknowledgements} 
+
+\end{document}

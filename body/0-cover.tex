@@ -1,0 +1,132 @@
+\begin{titlepage}
+	\vspace*{0.8cm}
+	\begin{center}
+		\vspace*{2cm}
+		
+		% 中文标题
+		\begin{center}
+			\renewcommand{\baselinestretch}{1.5} % 设置行距
+			\songti\zihao{2}\textbf{\@ctitle} % 修改成宋体加粗
+			\renewcommand{\baselinestretch}{1.5} % 设置行距
+		\end{center}
+		
+		\vspace*{1cm}
+		
+		% 英文标题
+		\begin{center}
+			\renewcommand{\baselinestretch}{1.5} % 设置行距
+			\songti\zihao{2}\textbf{\@etitle}  % 宋体加粗1.25倍行距
+			\renewcommand{\baselinestretch}{1.5} % 设置行距
+		\end{center}
+		
+		\vspace*{1cm}
+		
+		% 信息表
+		{\songti\zihao{4}
+			\renewcommand\arraystretch{1.2} 
+			\begin{tabular}{p{3cm}@{：}l}
+				\@csubjecttitle & \qquad\@csubject \\
+				\cline{2-2} 
+			    \@cauthortitle& \qquad\@cauthor \\
+				\cline{2-2} 
+				\@csupervisortitle & \qquad\@csupervisor\qquad\ \\
+				\cline{2-2} 
+			\end{tabular}
+		}
+
+		\vspace*{1cm}
+		
+		% 答辩委员会
+		{\songti\zihao{4}
+	\renewcommand\arraystretch{1.2} 
+	\setlength{\tabcolsep}{1em} % 单元格水平间距
+	\begin{tabular}{|c|c|c|c|}
+		\hline 
+		\textbf{答辩日期} & \multicolumn{3}{c|}{XXXX年XX月XX日}\tabularnewline
+		\hline 
+		\textbf{答辩委员会} & \textbf{姓名} & \textbf{职称} & \textbf{\qquad 工作单位 \qquad\qquad}\tabularnewline
+		\hline 
+		\textbf{主席} & 某某某 & 教授 & 天津大学某某学院 \tabularnewline
+		\hline 
+		\multirow{2}{*}{\textbf{委员}} &某某某  &副教授  & 天津大学某某学院 \tabularnewline
+		\cline{2-4} \cline{3-4} \cline{4-4} 
+		& 某某某 & 副教授 & 天津大学某某学院 \tabularnewline
+		\hline 
+	\end{tabular}
+}
+
+	\vspace*{1cm}
+		\songti\zihao{4}\@caffil \\
+		\songti\zihao{4}\@cdate
+	\end{center}
+	
+\end{titlepage}
+
+\pagestyle{empty}
+
+
+%  另起一页： 独创性声明和学位论文版权使用授权书
+\newpage
+\vspace*{1cm}
+\renewcommand{\baselinestretch}{1} % 设置行距
+\begin{center}\songti\zihao{-2}{独创性声明}\end{center}\par
+\vspace*{0.5cm}
+{本人声明所呈交的学位论文是本人在导师指导下进行的研究工作和取得的研究成果，除了文中特别加以标注和致谢之处外，论文中不包含其他人已经发表或撰写过的研究成果，也不包含为获得 {\underline{\kaishu\zihao{4}\bfseries{~~天津大学~~}}} 或其他教育机构的学位或证书而使用过的材料。与我一同工作的同志对本研究所做的任何贡献均已在论文中作了明确的说明并表示了谢意。}\par
+\vspace*{1cm}
+\begin{multicols}{2}
+	\noindent 学位论文作者签名:  
+	
+	\noindent 签字日期: \makebox[1.5cm][s]{} 年 \makebox[0.5cm][s]{} 月 \makebox[0.5cm][s]{} 日 
+\end{multicols}
+\vspace*{3cm}
+\begin{center}\songti\zihao{-2}{学位论文版权使用授权书}\end{center}\par
+\vspace*{1cm}
+
+\songti{本学位论文作者完全了解{\underline{\kaishu\zihao{4}\bfseries{~~天津大学~~}}}有关保留、使用学位论文的规定。特授权{\underline{\kaishu\zihao{4}\bfseries{~~天津大学~~}}} 可以将学位论文的全部或部分内容编入有关数据库进行检索，并采用影印、缩印或扫描等复制手段保存、汇编以供查阅和借阅。同意学校向国家有关部门或机构送交论文的复印件和磁盘。}
+\begin{center}（保密的学位论文在解密后适用本授权说明）\end{center}
+
+
+\vspace*{1cm}
+\begin{multicols}{2}       % 分两栏 若花括号中为3则是分三列
+	\noindent 学位论文作者签名:  
+	\newline\newline
+	\noindent 签字日期: \makebox[1.5cm][s]{} 年 \makebox[0.7cm][s]{} 月 \makebox[0.7cm][s]{} 日 
+	
+	\noindent 导师签名:  
+	\newline\newline
+	\noindent 签字日期: \makebox[1.5cm][s]{} 年 \makebox[0.7cm][s]{} 月 \makebox[0.7cm][s]{} 日 
+	
+\end{multicols}
+
+% 前言部分
+\cleardoublepage
+\frontmatter{
+\pagestyle{front}
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\chapter*{\centering\songti\zihao{2}\textbf{摘{\qquad}要}}
+\addcontentsline{toc}{chapter}{摘{\qquad}要}
+\markboth{摘{\qquad}要}{摘{\qquad}要}
+\thispagestyle{front}
+\input{body/0-abstract-cn}
+
+\chapter*{\centering\songti\zihao{2}\textbf{ABSTRACT}}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\markboth{ABSTRACT}{ABSTRACT}
+\thispagestyle{front}
+\input{body/0-abstract-en}
+
+\cleardoublepage
+
+% 目录
+\setcounter{page}{1}
+\tableofcontents
+\thispagestyle{front}
+
+}
+
+\mainmatter
+\pagestyle{fancy}
+\pagenumbering{arabic}
+\setcounter{page}{1}
